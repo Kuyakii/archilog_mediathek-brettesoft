@@ -29,10 +29,6 @@ public class Abonne {
         return nom;
     }
 
-    public LocalDate getDateNaissance() {
-        return dateNaissance;
-    }
-
     public int getAge() {
         return Period.between(dateNaissance, LocalDate.now()).getYears();
     }
@@ -53,10 +49,6 @@ public class Abonne {
 
     public void bannirPourUnMois() {
         this.banniJusqu = LocalDate.now().plusMonths(1);
-    }
-
-    public LocalDate getDateFinBannissement() {
-        return banniJusqu;
     }
 
     public String getDateFinBannissementFormatee() {

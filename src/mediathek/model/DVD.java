@@ -20,7 +20,7 @@ public class DVD implements Document {
     private LocalDateTime dateEmprunt = null;
 
     // Sitting Bull
-    private List<Abonne> alertes = new ArrayList<>();
+    private final List<Abonne> alertes = new ArrayList<>();
 
     public DVD(int numero, String titre, boolean adulte) {
         this.numero = numero;

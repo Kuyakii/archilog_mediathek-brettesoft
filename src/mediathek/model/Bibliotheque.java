@@ -6,8 +6,8 @@ import java.util.Map;
 
 public class Bibliotheque {
     private static Bibliotheque instance;
-    private Map<Integer, Abonne> abonnes = new HashMap<>();
-    private Map<Integer, Document> documents = new HashMap<>();
+    private final Map<Integer, Abonne> abonnes = new HashMap<>();
+    private final Map<Integer, Document> documents = new HashMap<>();
 
     private Bibliotheque() {
         initialiser();

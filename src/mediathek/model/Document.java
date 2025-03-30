@@ -2,7 +2,6 @@ package mediathek.model;
 
 import mediathek.exception.ReservationException;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public interface Document {

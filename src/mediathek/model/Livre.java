@@ -3,7 +3,6 @@ package mediathek.model;
 import mediathek.bsoft.SittingBull;
 import mediathek.exception.ReservationException;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
