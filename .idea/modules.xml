@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/SAE_Mediatek.iml" filepath="$PROJECT_DIR$/SAE_Mediatek.iml" />
       <module fileurl="file://$PROJECT_DIR$/client/client.iml" filepath="$PROJECT_DIR$/client/client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/serveur/serveur.iml" filepath="$PROJECT_DIR$/serveur/serveur.iml" />
     </modules>
   </component>
 </project>
