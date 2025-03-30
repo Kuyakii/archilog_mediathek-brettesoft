@@ -34,8 +34,12 @@ public class ServiceEmprunt implements Runnable {
             Abonne ab = bib.getAbonne(idAbonne);
             Document doc = bib.getDocument(idDocument);
 
-            if (ab == null || doc == null) {
-                out.println("ERREUR : abonné ou document introuvable");
+            if (ab == null) {
+                out.println("ERREUR : abonné introuvable");
+                return;
+            }
+            if (doc == null) {
+                out.println("ERREUR : document introuvable");
                 return;
             }
 
