@@ -92,7 +92,7 @@ public class ServiceReservation implements Runnable {
             }
 
             // SITTING BULL
-            if (reservePar != null && !reservePar.equals(ab)) {
+            if (reservePar != null && !reservePar.equals(ab) && expiration != null) {
                 String fin = expiration.format(DateTimeFormatter.ofPattern("HH'h'mm"));
                 out.println("ERREUR : Ce document est réservé jusqu’à " + fin + ". Voulez-vous activer l’alerte Sitting Bull ? (oui/non)");
 
@@ -100,15 +100,6 @@ public class ServiceReservation implements Runnable {
                 if (reponse != null && reponse.equalsIgnoreCase("oui")) {
                     doc.ajouterAlerte(ab);
                     out.println("Alerte activée ! Vous recevrez un signal de fumée au retour.");
-
-                    try {
-                        while(doc.getReservePar() != null || doc.getDateEmprunt() != null) {
-                            Thread.sleep(500);
-                        }
-                    } catch (InterruptedException e) {
-                        out.println("ERREUR : Sitting Bull a été interrompue.");
-                        return;
-                    }
                 } else {
                     out.println("Alerte non activée.");
                 }
@@ -127,7 +118,9 @@ public class ServiceReservation implements Runnable {
         } catch (IOException e) {
             System.err.println("Erreur réseau ServiceReservation : " + e);
         } finally {
-            try { socket.close(); } catch (IOException e) {}
+            try { socket.close(); } catch (IOException e) {
+                System.err.println("Erreur lors de la fermeture du socket" + e);
+            }
         }
     }
 }

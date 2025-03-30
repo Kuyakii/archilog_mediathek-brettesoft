@@ -59,7 +59,9 @@ public class ServiceEmprunt implements Runnable {
         } catch (IOException e) {
             System.err.println("Erreur réseau ServiceEmprunt : " + e);
         } finally {
-            try { socket.close(); } catch (IOException e) {}
+            try { socket.close(); } catch (IOException e) {
+                System.err.println("Erreur lors de la fermeture du socket" + e);
+            }
         }
     }
 }

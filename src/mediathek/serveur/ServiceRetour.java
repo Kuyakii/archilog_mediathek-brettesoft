@@ -11,7 +11,6 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.time.Duration;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Random;
 
@@ -80,7 +79,9 @@ public class ServiceRetour implements Runnable {
         } catch (IOException e) {
             System.err.println("Erreur réseau ServiceRetour : " + e);
         } finally {
-            try { socket.close(); } catch (IOException e) {}
+            try { socket.close(); } catch (IOException e) {
+                System.err.println("Erreur lors de la fermeture du socket" + e);
+            }
         }
     }
 }
